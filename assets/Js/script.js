@@ -13,11 +13,13 @@ function addBooks() {
   };
   bookStore.push(Book);
   const jsonData = JSON.stringify(bookStore);
-  window.localStorage.setItem('books', jsonData);
+  window.localStorage.setItem('StoreBook', jsonData);
 }
 //  add book button event listener
-addbookForm.addEventListener('submit', addBooks);
-
+addbookForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  addBooks();
+});
 // display books collection
 function fetchData() {
   const BooksList = localStorage.getItem('books');
