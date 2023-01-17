@@ -12,13 +12,13 @@
 		<h1 class="main-header">Awesome books</h1>
 	</header>
 	<ul class="books-list">
-		<ul class="book-list">
+		<ul class="book-list" data-id="0">
 			<li class="book-title">First Book</li>
 			<li class="book-author">sit amet</li>
       <button class="remove-btn" type="reset">Remove</button>
 			<hr>
 		</ul>
-		<ul class="books-list">
+		<ul class="book-list" data-id="1">
 			<li class="book-title">Second Book</li>
 			<li class="book-author">sit amet</li>
 			<button class="remove-btn" type="reset">Remove</button>
@@ -26,8 +26,13 @@
 		</ul>
 	</ul>
   <form action="" class="add-book-form">
-		<label for="title"></label>
-    <input type="text" placeholder="Title" name="title" class="">
+		<label for="title">
+    	<input type="text" placeholder="Title" name="title" id="title" class="title-input">
+		</label>
+		<label for="author">
+  		<input type="text" placeholder="Author" name="author" id="author" class="author-input">
+    </label>
+		<button type="submit" id="add-btn">Add</button>
 	</form>
   <script src="assets/Js/script.js"></script>
 </body>
