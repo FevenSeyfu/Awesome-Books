@@ -4,7 +4,7 @@ const author = document.getElementById('author');
 const listContainer = document.getElementById('display-book-list');
 const addbookForm = document.getElementById('add-form');
 const bookStore = [];
-​
+
 // Add books and store in localstorage
 function addBooks() {
   const Book = {
@@ -16,10 +16,8 @@ function addBooks() {
   window.localStorage.setItem('books', jsonData);
 }
 //  add book button event listener
-addbookForm.addEventListener('submit', () => {
-  addBooks();
-});
-​
+addbookForm.addEventListener('submit', addBooks);
+
 // display books collection
 function fetchData() {
   const BooksList = localStorage.getItem('books');
@@ -35,14 +33,14 @@ function fetchData() {
       <li>`;
   });
 }
-​
+
 window.onload = () => {
   fetchData();
 };
-​
+
 // remove book from list(author,title)
 function removeBooks(index) {
-  books.splice(index, 1);
+  bookStore.splice(index, 1);
 }
 // event listener for remove button
 removeBookBtns.forEach((removeBookBtn) => {
