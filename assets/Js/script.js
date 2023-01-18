@@ -1,5 +1,3 @@
-// const addBookBtns = document.getElementById('add-btn');
-const removeBookBtns = document.querySelectorAll('.remove-btn');
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 const listContainer = document.getElementById('display-book-list');
@@ -16,12 +14,14 @@ function addBooks() {
   bookStorage.push(Book);
   storedData.push(Book);
   localStorage.setItem('StoreBook', JSON.stringify(storedData));
+  window.location.reload();
 }
 //  add book button event listener
 addbookForm.addEventListener('submit', (e) => {
   e.preventDefault();
   addBooks();
 });
+
 // display books collection
 function fetchData() {
   const BooksList = localStorage.getItem('StoreBook');
@@ -43,14 +43,21 @@ window.addEventListener('load', (e) => {
 });
 
 // remove book from list(author,title)
-// function removeBooks(index) {
-//   bookStorage.splice(index, 1);
-// }
+function removeBooks(title) {
+  let BooksList = localStorage.getItem('StoreBook');
+  BooksList = JSON.parse(BooksList);
+  const index = BooksList.findIndex((book) => book.title === title);
+  BooksList.splice(index, 1);
+  localStorage.setItem('StoreBook', JSON.stringify(BooksList));
+  window.location.reload();
+}
+
 // event listener for remove button
-removeBookBtns.forEach((removeBookBtn) => {
-  removeBookBtn.addEventListener('click', (e) => {
+document.body.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove-btn')) {
     e.preventDefault();
-    // const id = e.target.parentNode.getAttribute('data-id');
-    // removeBooks();
-  });
+    const ul = e.target.parentNode;
+    const title = ul.firstChild.innerText;
+    removeBooks(title);
+  }
 });
