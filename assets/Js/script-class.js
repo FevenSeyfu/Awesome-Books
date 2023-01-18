@@ -35,10 +35,11 @@ class Book {
     });
   }
 
-  removeBooks() {
+  static removeBooks(title, author) {
     let BooksList = localStorage.getItem('StoreBook');
     BooksList = JSON.parse(BooksList);
-    const index = BooksList.findIndex((book) => book.title === this.title);
+    // eslint-disable-next-line max-len
+    const index = BooksList.findIndex((book) => book.title === title && book.author === author);
     BooksList.splice(index, 1);
     localStorage.setItem('StoreBook', JSON.stringify(BooksList));
     window.location.reload();
@@ -62,9 +63,10 @@ window.addEventListener('load', (e) => {
 // remove book from collection
 document.body.addEventListener('click', (e) => {
   if (e.target.classList.contains('remove-btn')) {
-    e.preventDefault();
+    // e.preventDefault();
     const ul = e.target.parentNode;
     const title = ul.firstChild.innerText;
-    newBook.removeBooks(title);
+    const author = ul.children.item(1).innerText;
+    Book.removeBooks(title, author);
   }
 });
