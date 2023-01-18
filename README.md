@@ -98,12 +98,16 @@ the repository.
 
 ## 👥 Authors <a name="authors"></a>
 
-> Project done by me.
-
 👤 **Author**
 
 - GitHub: [@FevenSeyfu](https://github.com/FevenSeyfu)
 - LinkedIn: [@feven-seyfu](https://www.linkedin.com/in/feven-seyfu-0008641b0)
+
+
+👤 **Author**
+
+- GitHub: [@Engruugbejimmy](https://github.com/EngruugbeJimmy)
+- LinkedIn: [@feven-seyfu](https://www.linkedin.com/in/abah-james-ugbede-356982159/)
 
 
 <!-- FUTURE FEATURES -->
