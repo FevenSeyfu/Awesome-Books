@@ -15,18 +15,18 @@
 			</div>
       <nav>
 				<ul class="nav-bar">
-					<li class="nav-item">List</li>
-					<li class="nav-item">Add new</li>
-					<li class="nav-item">Contact</li>
+					<li class="nav-item"><a href="#list-books" id="list">List</a></li>
+					<li class="nav-item"><a href="#add-book" id="add-new">Add new</a></li>
+					<li class="nav-item"><a href="#contact-section" id="contact">Contact</a></li>
 				</ul>
 			</nav>
 		</section>
 		<div class="current-time"></div>
-    <section class="list-books-section hide">
+    <section class="list-books-section show" id="list-books">
       <h1 class="header">All awesome books</h1>
 			<table id="display-book-list" class="booklist-table"></table>
 		</section>
-		<section class="add-book-section hide">
+		<section class="add-book-section hide" id="add-book">
 		  <h1 class="header">Add a new book</h1>
 			<form action=""  id="add-form">
 			  <div class="add-book-form">
@@ -40,7 +40,7 @@
 				</div>
 			</form>
 		</section>
-		<section class="contact">
+		<section class="contact hide" id="contact-section">
 		  <h1 class="header">Contact Information</h1>
 			<div class="detail">
 			  <h4 class="contact-font">Do you have any questions or you want to reachout to say "Hello"? <br>
@@ -56,6 +56,6 @@
       <p>copyright  ..</p>
 		</section>
 	</div>
-  <script src="assets/Js/script-class.js"></script>
+  <script src="assets/Js/script-contact.js"></script>
 </body>
 </html>
