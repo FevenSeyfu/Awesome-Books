@@ -11,6 +11,7 @@ class Book {
   addBooks() {
     const storedData = JSON.parse(localStorage.getItem('StoreBook')) || [];
     const newBook = {
+      id: storedData.length + 1,
       title: title.value,
       author: author.value,
     };
@@ -24,28 +25,26 @@ class Book {
     const BooksList = localStorage.getItem('StoreBook');
     const parseBooksList = JSON.parse(BooksList);
     parseBooksList.forEach((book) => {
-      const bookList = document.createElement('ul');
+      const bookList = document.createElement('tr');
       bookList.classList.add('book-list');
+      bookList.setAttribute('data-id', book.id);
       listContainer.append(bookList);
-      bookList.innerHTML = `<li class="book-title">${book.title}</li>
-        <li class="book-author">${book.author}</li>
-        <button class="remove-btn" type="reset">Remove</button>
-        <hr>
-      <li>`;
+      bookList.innerHTML = `
+          <td class="book-author col-1">"${book.title}" by ${book.author}</td>
+          <td><button class="remove-btn col-2" type="reset">Remove</button></td>`;
     });
   }
 
-  static removeBooks(title, author) {
+  static removeBooks(x) {
     let BooksList = localStorage.getItem('StoreBook');
     BooksList = JSON.parse(BooksList);
-    // eslint-disable-next-line max-len
-    const index = BooksList.findIndex((book) => book.title === title && book.author === author);
+    x = parseFloat(x);
+    const index = BooksList.findIndex((book) => book.id === x);
     BooksList.splice(index, 1);
     localStorage.setItem('StoreBook', JSON.stringify(BooksList));
     window.location.reload();
   }
 }
-
 const newBook = new Book();
 
 // add book method call
@@ -63,10 +62,9 @@ window.addEventListener('load', (e) => {
 // remove book from collection
 document.body.addEventListener('click', (e) => {
   if (e.target.classList.contains('remove-btn')) {
-    // e.preventDefault();
-    const ul = e.target.parentNode;
-    const title = ul.firstChild.innerText;
-    const author = ul.children.item(1).innerText;
-    Book.removeBooks(title, author);
+    e.preventDefault();
+    const row = e.target.parentNode.parentNode;
+    const index = row.getAttribute('data-id');
+    Book.removeBooks(index);
   }
 });

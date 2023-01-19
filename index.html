@@ -8,19 +8,28 @@
 	<title>Awesome Books</title>
 </head>
 <body>
-  <header>
-   <h1 class="main-header">Awesome books</h1>
-  </header>
-  <div id="display-book-list"></div>
-  <form action="" class="add-book-form" id="add-form">
-    <label for="title">
-      <input type="text" placeholder="Title" name="title" id="title" class="title-input">
-    </label>
-    <label for="author">
-     <input type="text" placeholder="Author" name="author" id="author" class="author-input">
-   </label>
-   <button type="submit" id="add-btn">Add</button>
-  </form>
+  <div class="container">
+    <!-- <header>
+			<h1 class="main-header">Awesome books</h1>
+		</header> -->
+		<section class="list-books-section">
+      <h1>All awesome books</h1>
+			<table id="display-book-list" class="booklist-table">
+
+			</table>
+		</section>
+		<section class="add-book-section">
+			<form action="" class="add-book-form" id="add-form">
+				<label for="title">
+					<input type="text" placeholder="Title" name="title" id="title" class="title-input">
+				</label>
+				<label for="author">
+					<input type="text" placeholder="Author" name="author" id="author" class="author-input">
+				</label>
+				<button type="submit" id="add-btn">Add</button>
+			</form>
+		</section>
+	</div>
   <script src="assets/Js/script-class.js"></script>
 </body>
 </html>

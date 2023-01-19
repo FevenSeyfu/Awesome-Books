@@ -1,3 +1,23 @@
-.book-list {
-  list-style-type: none;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 2% auto;
+  border: 1px solid black;
+}
+
+table {
+  width: 100%;
+  border: 1px solid;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
