@@ -8,19 +8,32 @@
 	<title>Awesome Books</title>
 </head>
 <body>
-  <header>
-   <h1 class="main-header">Awesome books</h1>
-  </header>
-  <div id="display-book-list"></div>
-  <form action="" class="add-book-form" id="add-form">
-    <label for="title">
-      <input type="text" placeholder="Title" name="title" id="title" class="title-input">
-    </label>
-    <label for="author">
-     <input type="text" placeholder="Author" name="author" id="author" class="author-input">
-   </label>
-   <button type="submit" id="add-btn">Add</button>
-  </form>
-  <script src="assets/Js/script.js"></script>
+  <div class="container">
+	  <section class="navbar">
+      <nav></nav>
+		</section>
+    <section class="list-books-section">
+      <h1 class="header">All awesome books</h1>
+			<table id="display-book-list" class="booklist-table">
+
+			</table>
+		</section>
+		<hr class="divider">
+		<section class="add-book-section">
+		  <h1 class="header">Add a new book</h1>
+			<form action=""  id="add-form">
+			  <div class="add-book-form">
+					<label for="title">
+						<input type="text" placeholder="Title" name="title" id="title" class="input">
+					</label>
+					<label for="author">
+						<input type="text" placeholder="Author" name="author" id="author" class="input">
+					</label>
+					<button type="submit" id="add-btn" >Add</button>
+				</div>
+			</form>
+		</section>
+	</div>
+  <script src="assets/Js/script-class.js"></script>
 </body>
 </html>
