@@ -2,6 +2,14 @@ const title = document.getElementById('title');
 const author = document.getElementById('author');
 const listContainer = document.getElementById('display-book-list');
 const addbookForm = document.getElementById('add-form');
+// nav links variables
+const navList = document.getElementById('list');
+const navAdd = document.getElementById('add-new');
+const navContact = document.getElementById('contact');
+// sections variable
+const sectionList = document.getElementById('list-books');
+const sectionAdd = document.getElementById('add-book');
+const sectionContact = document.getElementById('contact-section');
 
 class Book {
   constructor() {
@@ -68,3 +76,23 @@ document.body.addEventListener('click', (e) => {
     Book.removeBooks(index);
   }
 });
+
+// toggle with navbar
+function loadList() {
+  sectionList.classList.replace('hide', 'show');
+  sectionAdd.classList.replace('show', 'hide');
+  sectionContact.classList.replace('show', 'hide');
+}
+function loadAdd() {
+  sectionAdd.classList.replace('hide', 'show');
+  sectionList.classList.replace('show', 'hide');
+  sectionContact.classList.replace('show', 'hide');
+}
+function loadContact() {
+  sectionContact.classList.replace('hide', 'show');
+  sectionAdd.classList.replace('show', 'hide');
+  sectionList.classList.replace('show', 'hide');
+}
+navList.addEventListener('click', loadList);
+navAdd.addEventListener('click', loadAdd);
+navContact.addEventListener('click', loadContact);
