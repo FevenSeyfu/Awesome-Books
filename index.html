@@ -9,19 +9,28 @@
 </head>
 <body>
   <div class="container">
-		<section class="list-books-section">
-      <h1>All awesome books</h1>
-			<table id="display-book-list" class="booklist-table"></table>
+	  <section class="navbar">
+      <nav></nav>
 		</section>
+    <section class="list-books-section">
+      <h1 class="header">All awesome books</h1>
+			<table id="display-book-list" class="booklist-table">
+
+			</table>
+		</section>
+		<hr class="divider">
 		<section class="add-book-section">
-			<form action="" class="add-book-form" id="add-form">
-				<label for="title">
-					<input type="text" placeholder="Title" name="title" id="title" class="title-input">
-				</label>
-				<label for="author">
-					<input type="text" placeholder="Author" name="author" id="author" class="author-input">
-				</label>
-				<button type="submit" id="add-btn">Add</button>
+		  <h1 class="header">Add a new book</h1>
+			<form action=""  id="add-form">
+			  <div class="add-book-form">
+					<label for="title">
+						<input type="text" placeholder="Title" name="title" id="title" class="input">
+					</label>
+					<label for="author">
+						<input type="text" placeholder="Author" name="author" id="author" class="input">
+					</label>
+					<button type="submit" id="add-btn" >Add</button>
+				</div>
 			</form>
 		</section>
 	</div>
