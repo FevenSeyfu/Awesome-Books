@@ -121,7 +121,23 @@ label {
 
 /* style contact section */
 .contact {
-  margin-top: 5%;
+  margin: 5% auto;
+}
+
+.detail {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 3rem 25%;
+}
+
+.contact-font,
+.contact-item {
+  font-size: 1.2rem;
+}
+
+.list-contact {
+  padding-left: 3rem;
 }
 
 /* style footer section */
